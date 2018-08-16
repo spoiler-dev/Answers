@@ -19,18 +19,21 @@
             justify-content: center;
         }
 
+        body {
+            background: #d9e0e7;
+        }
+
         header {
             position: fixed;
             top: 0;
             left: 0;
             height: 48px;
             width: 100%;
-            background: #292525;
-            color: #ffffff;
+            background: #fff;
             font-size: 20px;
             font-weight: 600;
             line-height: 48px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             padding-left: 15px;
         }
 
@@ -43,26 +46,33 @@
             text-align: center;
         }
 
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
         #martix {
-            width: 800px;
+            width: 375px;
             height: 500px;
             text-align: center;
             z-index: 999;
         }
 
         #title {
-            width: 100%;
-            height: 100px;
+            margin: 35px 0 ;
+            height: 30px;
             font-size: 30px;
             text-align: center;
-            line-height: 100px;
-            color: #5195f6;
+            line-height: 30px;
+            color:#242a30;
+            background: #d9e0e7;
         }
 
         #unicorn {
             color: #FF9733;
             font-weight: 700;
             font-size: 30px;
+            background: #d9e0e7;
         }
 
         #pick {
@@ -70,12 +80,17 @@
             height: 40px;
             vertical-align: middle;
             cursor: pointer;
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+            border-radius: 40px;
+            border: none;
+            outline: none;
         }
 
         .telegram {
             position: absolute;
-            z-index: 1;
-            color: #777;
+            z-index: -1;
+            color: #24292e;
         }
 
         .hide {
@@ -83,26 +98,54 @@
         }
 
         .drink {
-            margin: 10px 0;
+            margin: 5px 0 10px 0;
             color: #fff;
-            background-color: #d9534f;
-            border-color: #d9534f;
-            box-shadow: 0 0 0 2px rgba(217,83,79,.5);
+            background-color: #fed4e5;
+            border-color: #fed4e5;
+            box-shadow: 0 0 0 2px rgba(254, 212, 229, .5);
+            padding: 5px 0;
+            font-size: 14px;
         }
 
+        #book {
+            font-family: "微软雅黑";
+        }
+
+        #diy {
+            width: 100px;
+            margin: 20px auto;
+            color: #00acac;
+            font-size: 12px;
+        }
+
+        #submit {
+            width: 120px;
+            height: 30px;
+            vertical-align: middle;
+            cursor: pointer;
+            background: rgb(0, 123, 255);
+            color: #fff;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+        }
     </style>
 </head>
 <body>
 
-    <header>ANSWERS BOOK 答案之书</header>
+    <header><a href="https://github.com/spolier">ANSWERS BOOK 答案之书</a></header>
 
     <article id="martix">
-        <p id="title">喵喵喵！送可爱的你一件礼物!</p>
+        <p id="title">送可爱的你一件礼物!</p>
         <p id="unicorn"></p>
         <input type="button" id="pick" value="Go Go Go!">
-        <textarea id="book" class="hide" rows="9" cols="53">
-        迪奥(Dior)唇釉💄 魅可(MAC)唇釉💄 香奈儿(Chanel)香水🐰 范思哲(VERACE)香水🐰 古驰(GUCCI)香水🐰 雅漾(Avene)喷雾🐰 卡哇伊的多肉植物🌿 美味蛋糕🍰 巧克力礼盒🍫 粉色猫耳耳机🎧 项链📿 耳环👂 耳链👂 耳钉👂 戒指💍 新裙子👗 「包」治百病👝 一场演唱会🎤 一次说走就走的旅行✈️ 10个抱抱💕 10次举高高💕 10个亲亲💏 兰芝(LANEIGE)护肤礼盒🎁 悦诗风吟(Innisfree)护肤礼盒🎁 兰芝(LANEIGE)隔离霜🎁 平板电脑🎮 来一组面膜🐹 一场电影📺 永生花🌹 一捧鲜花💐 一束璨烂的满天星💐 彩妆工具🎁 韩束洗护套装🎁 心理学书籍📚 酷酷的墨镜🕶️ 一场求婚💍 滚床单吧🏩 LOFREE洛斐熊本熊蓝牙机械键盘⌨️ airpods🎧 零食空投😋 回忆童年的娃哈哈😋 一盘车厘子🍒 芒果芒果😋 卫龙女孩😋 爱敬(AGE)气垫BB😀 销魂香辣蟹味小浣熊🥕 可爱的荷包👛 轻便的运动鞋👟 AppleWatch⌚ 一台放松双眼的显示器📺 一只喵🐈 一只狗狗🐩 蓝牙音箱📻 气质高跟鞋👡 电动牙刷😁 拉杆登机箱🛅 新床品🛌🏼 可爱手机壳📱 手表⌚ 腮红🦄 欠你的情书💌 合适的抹胸🐤 手机📱 电脑💻 丰子恺《此生多珍重》📔 西餐🍽️ 美容仪🦄 迷你加湿器🚿 睡衣👚 化妆镜🐭 定制相册📷 大声说爱你👀
-        </textarea>
+        <div id="diy">自定义清单</div>
+        <div class="hide" id="content">
+            <textarea id="book" rows="9" cols="53">
+            迪奥(Dior)唇釉💄 魅可(MAC)唇釉💄 香奈儿(Chanel)香水🐰 范思哲(VERACE)香水🐰 古驰(GUCCI)香水🐰 雅漾(Avene)喷雾🐰 卡哇伊的多肉植物🌿 美味蛋糕🍰 巧克力礼盒🍫 粉色猫耳耳机🎧 项链📿 耳环👂 耳链👂 耳钉👂 戒指💍 新裙子👗 「包」治百病👝 一场演唱会🎤 一次说走就走的旅行✈️ 10个抱抱💕 10次举高高💕 10个亲亲💏 兰芝(LANEIGE)护肤礼盒🎁 悦诗风吟(Innisfree)护肤礼盒🎁 兰芝(LANEIGE)隔离霜🎁 平板电脑🎮 来一组面膜🐹 一场电影📺 永生花🌹 一捧鲜花💐 一束璨烂的满天星💐 彩妆工具🎁 韩束洗护套装🎁 心理学书籍📚 酷酷的墨镜🕶️ 一场求婚💍 滚床单吧🏩 LOFREE洛斐熊本熊蓝牙机械键盘⌨️ airpods🎧 零食空投😋 回忆童年的娃哈哈😋 车厘子🍒 樱桃🍒 芒果芒果😋 卫龙女孩😋 爱敬(AGE)气垫BB😀 销魂香辣蟹味小浣熊🥕 可爱的荷包👛 轻便的运动鞋👟 AppleWatch⌚ 一台放松双眼的显示器📺 一只喵🐈 一只狗狗🐩 蓝牙音箱📻 气质高跟鞋👡 电动牙刷😁 拉杆登机箱🛅 新床品🛌🏼 可爱手机壳📱 手表⌚ 腮红🦄 欠你的情书💌 合适的抹胸🐤 手机📱 电脑💻 丰子恺《此生多珍重》📔 西餐🍽️ 美容仪🦄 迷你加湿器🚿 睡衣👚 化妆镜🐭 定制相册📷 大声说爱你👀 懒人沙发💺
+            </textarea>
+            <button id="submit">确定</button>
+        </div>
     </article>
 
     <footer>
@@ -119,10 +162,13 @@
             book = document.getElementById('book'),
             unicorn = document.getElementById('unicorn'),
             title = document.getElementById('title'),
+            diy = document.getElementById('diy'),
+            content = document.getElementById('content'),
+            submit = document.getElementById('submit'),
             timer = null,
             run = 0,
             index = 0
-        // 点击事件
+        // 随机挑选礼物
         btn.addEventListener('click',function(){
             // 删除多余空格，分割字符串
             let lollipop = book.value.replace(/ +/g, " ").replace(/^ | $/g, "").split(" ")
@@ -134,9 +180,9 @@
                     let props = Math.ceil(Math.random() * lollipop.length),
                         propsTop = Math.ceil(Math.random() * window.document.body.offsetHeight),
                         propsLeft = Math.ceil(Math.random() * window.document.body.offsetWidth),
-                        propsSize = Math.ceil(Math.random() * (37 - 14) + 14),
+                        propsSize = Math.ceil(Math.random() * (24 - 12) + 12),
                         surge = lollipop[props - 1],
-                        telegram = document.createElement('span')
+                        telegram = document.createElement('div')
                     telegram.setAttribute('class','telegram')
                     telegram.innerText = surge
                     unicorn.innerText = surge
@@ -149,7 +195,7 @@
                         })
                     })
                     run = 1
-                },40)
+                },50)
             } else {
                 title.innerText = '喵喵喵！就决定是你啦!'
                 clearInterval(timer)
@@ -161,6 +207,14 @@
                 alert('女人！ 我劝你善良！')
                 index = 0
             }
+        })
+        // 自定义
+        diy.addEventListener('click',function(){
+            content.classList.remove('hide')
+        })
+        // 提交
+        submit.addEventListener('click',function(){
+            content.classList.add('hide')
         })
     </script>
 </body>
