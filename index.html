@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>答案之书</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,html {
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: "微软雅黑";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #martix {
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            z-index: 999;
+        }
+
+        #title {
+            width: 100%;
+            height: 100px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #unicorn {
+            color: #FF9733;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        #pick {
+            width: 120px;
+            height: 40px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .telegram {
+            position: absolute;
+            z-index: 1;
+            color: #777;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <article id="martix">
+        <p id="title">喵喵喵！让我猜猜你想要什么礼物!</p>
+        <p id="unicorn"></p>
+        <input type="button" id="pick" value="Go Go Go!">
+        <textarea id="book" class="hide" rows="9" cols="53">
+        迪奥(Dior)唇釉💄 魅可(MAC)唇釉💄 香奈儿(Chanel)香水🐰 范思哲(VERACE)香水🐰 古驰(GUCCI)香水🐰 雅漾(Avene)喷雾🐰 卡哇伊的多肉植物🌿 美味蛋糕🍰 巧克力礼盒🍫 粉色猫耳耳机🎧 项链📿 耳环👂 耳链👂 耳钉👂 戒指💍 新裙子👗 「包」治百病👝 一场演唱会🎤 一次说走就走的旅行✈️ 10个抱抱💕 10次举高高💕 10个亲亲💏 兰芝(LANEIGE)护肤礼盒🎁 悦诗风吟(Innisfree)护肤礼盒🎁 兰芝(LANEIGE)隔离霜🎁 平面电脑🎮 来一组面膜🐹 一场电影📺 永生花🌹 一捧鲜花💐 一束璨烂的满天星💐 彩妆工具🎁 韩束洗护套装🎁 心理学书籍📚 酷酷的墨镜🕶️ 一场求婚💍 滚床单吧🏩 LOFREE洛斐熊本熊蓝牙机械键盘⌨️ airpods🎧 零食空投😋 回忆童年的娃哈哈😋 一盘车厘子🍒 芒果芒果😋 卫龙女孩😋 爱敬(AGE)气垫BB😀 销魂香辣蟹味小浣熊🥕 可爱的荷包👛 轻便的运动鞋👟 AppleWatch⌚ 一台放松双眼的显示器📺 一只喵🐈 一只狗狗🐩 蓝牙音箱📻 气质高跟鞋👡 电动牙刷😁 拉杆登机箱🛅 新床品🛌🏼 可爱手机壳📱 手表⌚ 腮红🦄 欠你的情书💌 合适的抹胸🐤 手机📱 电脑💻 丰子恺《此生多珍重》📔 西餐🍽️ 美容仪🦄 迷你加湿器🚿 睡衣👚 化妆镜🐭 定制相册📷 大声说爱你👀
+        </textarea>
+    </article>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        let btn = document.getElementById('pick'),
+            book = document.getElementById('book'),
+            unicorn = document.getElementById('unicorn'),
+            title = document.getElementById('title'),
+            timer = null,
+            run = 0,
+            index = 0
+
+        // 点击事件
+        btn.addEventListener('click',function(){
+            // 删除多余空格，分割字符串
+            let lollipop = book.value.replace(/ +/g, " ").replace(/^ | $/g, "").split(" ")
+            if (!run) {
+                btn.value = 'Stop'
+                timer = setInterval(function(){
+                    // Math.ceil 向上取整
+                    // Math.random() 方法可返回介于 0 ~ 1 之间的一个随机数
+                    let props = Math.ceil(Math.random() * lollipop.length),
+                        propsTop = Math.ceil(Math.random() * window.document.body.offsetHeight),
+                        propsLeft = Math.ceil(Math.random() * window.document.body.offsetWidth),
+                        propsSize = Math.ceil(Math.random() * (37 - 14) + 14),
+                        surge = lollipop[props - 1],
+                        telegram = document.createElement('span')
+                    telegram.setAttribute('class','telegram')
+                    telegram.innerText = surge
+                    unicorn.innerText = surge
+                    telegram.style.cssText = `top: ${propsTop}px;left: ${propsLeft}px;color: "rgba(0,0,0,." + Math.random() + ")";font-size: ${propsSize}px`
+                    document.body.appendChild(telegram)
+                    // 动画
+                    $('.telegram').fadeIn("slow", function () {
+                        $(this).fadeOut("slow", function () {
+                            $(this).remove()
+                        })
+                    })
+                    run = 1
+                },40)
+            } else {
+                title.innerText = '喵喵喵！就决定是你啦!'
+                clearInterval(timer)
+                btn.value = 'Try 一 Try'
+                run = 0
+            }
+            index++
+            if(index == 7) {
+                alert('女人！ 我劝你善良！')
+                index = 0
+            }
+        })
+    </script>
+</body>
+</html>
