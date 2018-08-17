@@ -54,7 +54,7 @@
 
         #martix {
             width: 375px;
-            height: 500px;
+            height: 400px;
             text-align: center;
             z-index: 999;
         }
@@ -109,10 +109,9 @@
         }
 
         #drink {
-            width: 80px;
+            width: 100px;
             height: 28px;
             line-height: 28px;
-            vertical-align: middle;
             cursor: pointer;
             background: #dc3545;
             color: #fff;
@@ -120,10 +119,12 @@
             border: none;
             outline: none;
             position: absolute;
-            bottom: 10px;
-            left: 36px;
+            bottom: 5px;
+            left: 26px;
             font-size: 14px;
             z-index: 999;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
         #book {
@@ -151,7 +152,7 @@
 
         #popover {
             position: absolute;
-            bottom: 50px;
+            bottom: 45px;
             border: 1px solid rgba(0,0,0,.2);
             border-radius: 8px;
             background: #fff;
@@ -204,7 +205,7 @@
 
     <footer>
         <div id="eq">
-            <div id="drink">请喝饮料</div>
+            <div id="drink"> 请喝饮料</div>
             <div class="hide" id="popover">
                 <div class="popover-body">
                     <img src="img/IMG_1558.JPG" alt="" width="128px" height="128px">
@@ -286,7 +287,6 @@
         })
         // 请喝饮料
         drink.addEventListener('click',function(){
-            alert('123')
             if (!flag) {
                 popover.classList.remove('hide')
                 flag = 1
