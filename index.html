@@ -123,6 +123,7 @@
             bottom: 10px;
             left: 36px;
             font-size: 14px;
+            z-index: 999;
         }
 
         #book {
@@ -285,6 +286,7 @@
         })
         // 请喝饮料
         drink.addEventListener('click',function(){
+            alert('123')
             if (!flag) {
                 popover.classList.remove('hide')
                 flag = 1
