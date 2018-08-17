@@ -57,7 +57,7 @@
             text-align: center;
             z-index: 999;
             height: 300px;
-            margin-top: -120px;
+            margin-top: -140px;
         }
 
         #title {
@@ -67,7 +67,6 @@
             text-align: center;
             line-height: 30px;
             color:#242a30;
-            background: #d9e0e7;
         }
 
         #unicorn {
@@ -134,7 +133,7 @@
 
         #diy {
             width: 100px;
-            margin: 20px auto 0 auto;
+            margin: 10px auto 0 auto;
             color: #00acac;
             font-size: 12px;
         }
@@ -240,6 +239,7 @@
             let lollipop = book.value.replace(/ +/g, " ").replace(/^ | $/g, "").split(" ")
             if (!run) {
                 btn.value = 'Stop'
+                title.innerText = ''
                 timer = setInterval(function(){
                     // Math.ceil 向上取整
                     // Math.random() 方法可返回介于 0 ~ 1 之间的一个随机数
