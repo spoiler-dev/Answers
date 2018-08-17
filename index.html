@@ -108,6 +108,23 @@
             font-size: 14px;
         }
 
+        #drink {
+            width: 80px;
+            height: 28px;
+            line-height: 28px;
+            vertical-align: middle;
+            cursor: pointer;
+            background: #dc3545;
+            color: #fff;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            position: absolute;
+            bottom: 0;
+            left: 36px;
+            font-size: 14px;
+        }
+
         #book {
             font-family: "微软雅黑";
         }
@@ -130,6 +147,42 @@
             border: none;
             outline: none;
         }
+
+        .popover {
+            display: none;
+            position: absolute;
+            bottom: 40px;
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .popover-body {
+            padding: 12px;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-width: 8px 16px;
+            margin: 0 auto;
+            border-style:solid;
+            border-color:#fff transparent transparent transparent;
+            left: 60px;
+        }
+
+        #drink:hover+.popover {
+            display: block;
+        }
+
+        #eq {
+            position: relative;
+            overflow: hidden;
+            width: 152px;
+            height: 200px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -150,8 +203,18 @@
     </article>
 
     <footer>
-        <img src="img/IMG_1558.JPG" alt="" width="128px" height="128px">
-        <div class="drink">请喝饮料 © spolier 方正 </div>
+        <div id="eq">
+            <div id="drink">请喝饮料</div>
+            <div class="popover">
+                <div class="popover-body">
+                    <img src="img/IMG_1558.JPG" alt="" width="128px" height="128px">
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+        <a href="https://github.com/spolier">
+            <div class="drink"> © spolier 方正 </div>
+        </a>
         <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank">
             <img src="img/by-nc-nd.svg" width="76" height="16" title="Creative Commons「署名 - 非商业性使用 - 禁止演绎 4.0」许可协议">
         </a>
