@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>答案之书</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <style>
         body,html {
             position: relative;
@@ -139,7 +140,7 @@
         <p id="title">送可爱的你一件礼物!</p>
         <p id="unicorn"></p>
         <input type="button" id="pick" value="Go Go Go!">
-        <div id="diy">自定义清单</div>
+        <div id="diy">{自定义清单}</div>
         <div class="hide" id="content">
             <textarea id="book" rows="9" cols="53">
             迪奥(Dior)唇釉💄 魅可(MAC)唇釉💄 香奈儿(Chanel)香水🐰 范思哲(VERACE)香水🐰 古驰(GUCCI)香水🐰 雅漾(Avene)喷雾🐰 卡哇伊的多肉植物🌿 美味蛋糕🍰 巧克力礼盒🍫 粉色猫耳耳机🎧 项链📿 耳环👂 耳链👂 耳钉👂 戒指💍 新裙子👗 「包」治百病👝 一场演唱会🎤 一次说走就走的旅行✈️ 10个抱抱💕 10次举高高💕 10个亲亲💏 兰芝(LANEIGE)礼盒🎁 悦诗风吟(Innisfree)礼盒🎁 兰芝(LANEIGE)隔离霜🎁 平板电脑🎮 来一组面膜🐹 一场电影📺 永生花🌹 一捧鲜花💐 一束璨烂的满天星💐 彩妆工具🎁 韩束洗护套装🎁 心理学书籍📚 酷酷的墨镜🕶️ 一场求婚💍 滚床单吧🏩 洛斐熊本熊键盘⌨️ airpods🎧 零食空投😋 回忆童年的娃哈哈😋 车厘子🍒 樱桃🍒 芒果芒果😋 卫龙女孩😋 爱敬(AGE)气垫BB😀 销魂香辣蟹味小浣熊🥕 可爱的荷包👛 轻便的运动鞋👟 AppleWatch⌚ 一台显示器📺 一只喵🐈 一只狗狗🐩 蓝牙音箱📻 气质高跟鞋👡 电动牙刷😁 拉杆登机箱🛅 新床品🛌🏼 可爱手机壳📱 手表⌚ 腮红🦄 欠你的情书💌 合适的抹胸🐤 手机📱 电脑💻 《此生多珍重》📔 西餐🍽️ 美容仪🦄 迷你加湿器🚿 睡衣👚 化妆镜🐭 定制相册📷 大声说爱你👀 懒人沙发💺
@@ -168,6 +169,7 @@
             timer = null,
             run = 0,
             index = 0
+
         // 随机挑选礼物
         btn.addEventListener('click',function(){
             // 删除多余空格，分割字符串
@@ -208,11 +210,11 @@
                 index = 0
             }
         })
-        // 自定义
+        // 自定义菜单
         diy.addEventListener('click',function(){
             content.classList.remove('hide')
         })
-        // 提交
+        // 提交新菜单
         submit.addEventListener('click',function(){
             content.classList.add('hide')
         })
