@@ -100,7 +100,7 @@
 
         .drink {
             margin: 5px 0 10px 0;
-            color: #fff;
+            color: rgba(0,0,0,.5);
             background-color: #fed4e5;
             border-color: #fed4e5;
             box-shadow: 0 0 0 2px rgba(254, 212, 229, .5);
@@ -120,7 +120,7 @@
             border: none;
             outline: none;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             left: 36px;
             font-size: 14px;
         }
@@ -150,7 +150,7 @@
 
         #popover {
             position: absolute;
-            bottom: 40px;
+            bottom: 50px;
             border: 1px solid rgba(0,0,0,.2);
             border-radius: 8px;
             background: #fff;
@@ -171,7 +171,7 @@
             left: 60px;
         }
 
-        #drink:hover+.popover {
+        #drink:hover+#popover {
             display: block;
         }
 
@@ -179,7 +179,7 @@
             position: relative;
             overflow: hidden;
             width: 152px;
-            height: 200px;
+            height: 220px;
             margin: 0 auto;
         }
     </style>
