@@ -148,8 +148,7 @@
             outline: none;
         }
 
-        .popover {
-            display: none;
+        #popover {
             position: absolute;
             bottom: 40px;
             border: 1px solid rgba(0,0,0,.2);
@@ -205,7 +204,7 @@
     <footer>
         <div id="eq">
             <div id="drink">请喝饮料</div>
-            <div class="popover">
+            <div class="hide" id="popover">
                 <div class="popover-body">
                     <img src="img/IMG_1558.JPG" alt="" width="128px" height="128px">
                 </div>
@@ -229,9 +228,12 @@
             diy = document.getElementById('diy'),
             content = document.getElementById('content'),
             submit = document.getElementById('submit'),
+            drink = document.getElementById('drink'),
+            popover = document.getElementById('popover'),
             timer = null,
             run = 0,
-            index = 0
+            index = 0,
+            flag = 0
 
         // 随机挑选礼物
         btn.addEventListener('click',function(){
@@ -280,6 +282,16 @@
         // 提交新菜单
         submit.addEventListener('click',function(){
             content.classList.add('hide')
+        })
+        // 请喝饮料
+        drink.addEventListener('click',function(){
+            if (!flag) {
+                popover.classList.remove('hide')
+                flag = 1
+            } else {
+                popover.classList.add('hide')
+                flag = 0
+            }
         })
     </script>
 </body>
